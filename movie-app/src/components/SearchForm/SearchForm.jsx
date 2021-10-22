@@ -1,9 +1,11 @@
 import React from "react";
 
-function SearchForm() {
+const handleSearchTextChange = (e) => {};
+
+function SearchForm(props) {
   return (
     <div>
-      <input type="text" />
+      <input type="text" onChange={handleSearchTextChange} />
     </div>
   );
 }

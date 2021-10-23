@@ -1,13 +1,23 @@
 import React from "react";
-
-const handleSearchTextChange = (e) => {};
+import searchActions from "../../actions/searchActions";
+import { connect } from "react-redux";
 
 function SearchForm(props) {
+  const { searchText, setNewSearchText } = props;
+
+  const handleSearchTextChange = (e) => {
+    setNewSearchText(e.target.value);
+  };
+
   return (
     <div>
-      <input type="text" onChange={handleSearchTextChange} />
+      <input type="text" onChange={handleSearchTextChange} value={searchText} />
     </div>
   );
 }
 
-export default SearchForm;
+const mapStateToProps = (state) => ({
+  searchText: state.movies.searchText,
+});
+
+export default connect(mapStateToProps, { ...searchActions })(SearchForm);

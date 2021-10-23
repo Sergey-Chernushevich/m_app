@@ -1,7 +1,7 @@
-import { SEARCH_MOVIE } from "../actions/types";
+import { SEARCH_MOVIE, SET_NEW_SEARCH_TEXT } from "../actions/actionTypes";
 
 const initialState = {
-  text: "",
+  searchText: "",
   movies: [],
   loading: false,
   movie: [],
@@ -12,9 +12,11 @@ export const searchReduser = (state = initialState, action) => {
     case SEARCH_MOVIE:
       return {
         ...state,
-        text: action.payload,
+        searchText: action.payload,
         loading: false,
       };
+    case SET_NEW_SEARCH_TEXT:
+      return { ...state, searchText: action.payload };
     default:
       return state;
   }

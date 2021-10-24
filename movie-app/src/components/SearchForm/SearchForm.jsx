@@ -5,21 +5,32 @@ import { connect, useDispatch } from "react-redux";
 import { getMovies } from "../../actions/dataActions";
 
 function SearchForm(props) {
-  const { searchText, setNewSearchText } = props;
+  const { searchText, setNewSearchText, findMovie } = props;
 
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(getMovies());
+    // dispatch(getMovies());
   }, []);
 
   const handleSearchTextChange = (e) => {
     setNewSearchText(e.target.value);
   };
-
+  const handleSearchMovie = (e) => {
+    e.preventDefault();
+    findMovie(searchText);
+  };
   return (
     <div>
-      <input type="text" onChange={handleSearchTextChange} value={searchText} />
+      <form action="submit" onSubmit={handleSearchMovie}>
+        <input
+          type="text"
+          onChange={handleSearchTextChange}
+          value={searchText}
+        />
+        <button type="submit" className="">
+          Search
+        </button>
+      </form>
     </div>
   );
 }

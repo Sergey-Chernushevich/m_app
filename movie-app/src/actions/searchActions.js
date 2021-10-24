@@ -1,11 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
 // import axios from "axios";
-import {
-  SEARCH_MOVIE,
-  SET_NEW_SEARCH_TEXT,
-  // FETCH_MOVIES,
-} from "./actionTypes";
-// import { APIKey } from "../APIKey";
+import { SEARCH_MOVIE, SET_NEW_SEARCH_TEXT, FIND_MOVIE } from "./actionTypes";
+
+import { APIKey } from "../APIKey";
+
 const searchMovie = (searchText) => ({
   type: SEARCH_MOVIE,
   payload: searchText,
@@ -16,18 +14,18 @@ const setNewSearchText = (searchText) => ({
   payload: searchText,
 });
 
-// const fetchMovies = () => {
-//   axios
-//     .get(`http://www.omdbapi.com/?apikey=ef49482d&s="man"`)
-//     .then((response) => ({
-//       type: FETCH_MOVIES,
-//       payload: response.data,
-//     }))
-//     .catch((err) => console.log(err));
-// };
+const findMovie = (searchText) => {
+  return async (dispatch) => {
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}`
+    );
+    const json = await response.json();
+    dispatch({ type: FIND_MOVIE, payload: json });
+  };
+};
 
 export default {
   searchMovie,
   setNewSearchText,
-  // fetchMovies,
+  findMovie,
 };

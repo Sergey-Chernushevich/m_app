@@ -2,6 +2,7 @@ import {
   SEARCH_MOVIE,
   SET_NEW_SEARCH_TEXT,
   GET_MOVIES,
+  FIND_MOVIE,
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -22,6 +23,11 @@ export const searchReduser = (state = initialState, action) => {
     case SET_NEW_SEARCH_TEXT:
       return { ...state, searchText: action.payload };
     case GET_MOVIES:
+      return {
+        ...state,
+        movies: action.payload,
+      };
+    case FIND_MOVIE:
       return {
         ...state,
         movies: action.payload,

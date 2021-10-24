@@ -6,7 +6,7 @@ export function getMovies() {
       `http://www.omdbapi.com/?apikey=ef49482d&s="man"`
     );
     const json = await response.json();
-    dispatch({ type: GET_MOVIES, payload: json });
+    dispatch({ type: GET_MOVIES, payload: json.Search });
   };
 }
 

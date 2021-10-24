@@ -1,0 +1,15 @@
+.appWrapper {
+  background-color: #0c0c0c;
+  height: 100vh;
+}
+.appContent {
+  background-color: aqua;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+}
+.main {
+  flex: 1 0 auto;
+}

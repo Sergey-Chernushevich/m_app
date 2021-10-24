@@ -20,7 +20,7 @@ const findMovie = (searchText) => {
       `http://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}`
     );
     const json = await response.json();
-    dispatch({ type: FIND_MOVIE, payload: json });
+    dispatch({ type: FIND_MOVIE, payload: json.Search });
   };
 };
 

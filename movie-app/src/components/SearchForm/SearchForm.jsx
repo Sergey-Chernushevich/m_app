@@ -9,7 +9,7 @@ function SearchForm(props) {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    // dispatch(getMovies());
+    dispatch(getMovies());
   }, []);
 
   const handleSearchTextChange = (e) => {

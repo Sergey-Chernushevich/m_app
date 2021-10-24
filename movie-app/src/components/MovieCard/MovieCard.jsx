@@ -8,10 +8,13 @@ function MovieCard(props) {
       <div className={styles.posterWrapper}>
         <img src={movie.Poster} alt="" />
       </div>
-      <div className={styles.movieDetails}>
-        <div>{movie.Title}</div>
-        <div>{movie.Year}</div>
-        <div>Movie Dedails</div>
+      <div className={styles.movieDetailsWrapper}>
+        <div className={styles.movieDetails}>
+          <h3>{movie.Title}</h3>
+          <p>{movie.Year}</p>
+          <div>Movie Dedails</div>
+        </div>
+        <img src={movie.Poster} alt="" />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 // import "./App.css";
 import { Provider } from "react-redux";
 import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 import store from "./store/store";
 import Main from "./components/Main/Main";
@@ -12,7 +12,7 @@ function App() {
     <Provider store={store}>
       <div className={styles.appWrapper}>
         <div className={styles.appContent}>
-          <Navbar />
+          <Header />
           <SearchForm />
           <Main className={styles.main} />
           <Footer />

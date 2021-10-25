@@ -1,12 +1,17 @@
 import React from "react";
-import styles from "./MovieCard.module.css";
+import styles from "./MovieCard.module.scss";
+import posterPlaceHolder from "../../assets/img/no_poster.jpg";
 
 function MovieCard(props) {
   const { movie } = props;
+  let poster;
+  movie.Poster === "N/A"
+    ? (poster = posterPlaceHolder)
+    : (poster = movie.Poster);
   return (
     <div className={styles.movieCard}>
       <div className={styles.posterWrapper}>
-        <img src={movie.Poster} alt="" />
+        <img src={poster} alt="" />
       </div>
       <div className={styles.movieDetailsWrapper}>
         <div className={styles.movieDetails}>
@@ -14,7 +19,7 @@ function MovieCard(props) {
           <p>{movie.Year}</p>
           <div>Movie Dedails</div>
         </div>
-        <img src={movie.Poster} alt="" />
+        <img src={poster} alt="" />
       </div>
     </div>
   );

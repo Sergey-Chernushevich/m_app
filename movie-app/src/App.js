@@ -6,18 +6,24 @@ import SearchForm from "./components/SearchForm";
 import store from "./store/store";
 import Main from "./components/Main/Main";
 import styles from "./App.module.css";
+import { HashRouter as Router, Route } from "react-router-dom";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
   return (
     <Provider store={store}>
-      <div className={styles.appWrapper}>
-        <div className={styles.appContent}>
-          <Header />
-          <SearchForm />
-          <Main className={styles.main} />
-          <Footer />
+      <Router>
+        <div className={styles.appWrapper}>
+          <div className={styles.appContent}>
+            <Header />
+            <SearchForm />
+            {/* <Main className={styles.main} /> */}
+            <Route exact path="/" component={Main} />
+            <Route path="/movie/:id" exact component={MovieDetails} />
+            <Footer />
+          </div>
         </div>
-      </div>
+      </Router>
     </Provider>
   );
 }

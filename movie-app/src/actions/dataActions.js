@@ -1,4 +1,4 @@
-import { GET_MOVIES } from "./actionTypes";
+import { GET_MOVIES, GET_MOVIE } from "./actionTypes";
 
 export function getMovies() {
   return async (dispatch) => {
@@ -7,6 +7,16 @@ export function getMovies() {
     );
     const json = await response.json();
     dispatch({ type: GET_MOVIES, payload: json.Search });
+  };
+}
+
+export function getMovie(id) {
+  return async (dispatch) => {
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=ef49482d&i=${id}`
+    );
+    const json = await response.json();
+    dispatch({ type: GET_MOVIE, payload: json });
   };
 }
 

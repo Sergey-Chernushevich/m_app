@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MovieCard.module.scss";
 import posterPlaceHolder from "../../assets/img/no_poster.jpg";
+import { Link } from "react-router-dom";
 
 function MovieCard(props) {
   const { movie } = props;
@@ -17,7 +18,7 @@ function MovieCard(props) {
         <div className={styles.movieDetails}>
           <h3>{movie.Title}</h3>
           <p>{movie.Year}</p>
-          <div>Movie Dedails</div>
+          <Link to={"/movie/" + movie.imdbID}>Dedails</Link>
         </div>
         <img src={poster} alt="" />
       </div>

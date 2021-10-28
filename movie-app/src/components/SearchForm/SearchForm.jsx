@@ -5,11 +5,12 @@ import { connect, useDispatch } from "react-redux";
 import { getMovies } from "../../actions/dataActions";
 
 function SearchForm(props) {
-  const { searchText, setNewSearchText, findMovie } = props;
+  const { searchText, setNewSearchText, findMovie, setLoading } = props;
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMovies());
+    setLoading();
   }, []);
 
   const handleSearchTextChange = (e) => {

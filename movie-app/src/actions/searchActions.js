@@ -1,6 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
-// import axios from "axios";
-import { SEARCH_MOVIE, SET_NEW_SEARCH_TEXT, FIND_MOVIE } from "./actionTypes";
+import {
+  SEARCH_MOVIE,
+  SET_NEW_SEARCH_TEXT,
+  FIND_MOVIE,
+  LOADING,
+} from "./actionTypes";
 
 import { APIKey } from "../APIKey";
 
@@ -23,9 +27,15 @@ const findMovie = (searchText) => {
     dispatch({ type: FIND_MOVIE, payload: json.Search });
   };
 };
+const setLoading = () => {
+  return {
+    type: LOADING,
+  };
+};
 
 export default {
   searchMovie,
   setNewSearchText,
   findMovie,
+  setLoading,
 };

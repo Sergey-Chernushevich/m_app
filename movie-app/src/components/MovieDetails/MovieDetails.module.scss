@@ -1,5 +1,17 @@
-.MovieDetailsWrapper {
+.movieDetailsWrapper {
   width: 100%;
-  height: 200px;
+  height: 100%;
   background-color: #e23a3a;
+  display: flex;
+  padding: 10px;
+
+  .posterWrapper {
+    width: 70%;
+    img {
+      width: 100%;
+    }
+  }
+  .movieDetails {
+    height: 100%;
+  }
 }

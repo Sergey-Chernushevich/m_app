@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MoviesContainer.module.css";
+import styles from "./MoviesContainer.module.scss";
 import { connect } from "react-redux";
 import MovieCard from "../MovieCard";
 

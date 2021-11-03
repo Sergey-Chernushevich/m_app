@@ -3,13 +3,33 @@
   margin: 0;
   padding: 0;
 }
-
+@media screen and (max-width: 1280px) {
+  .movieCard {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .movieCard {
+    width: 33.333%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .movieCard {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .movieCard {
+    width: 100%;
+  }
+}
 .movieCard {
-  width: 250px;
-  height: 370px;
+  // height: auto;
   cursor: pointer;
   position: relative;
   color: #fff;
+
+  padding: 10px;
 
   &:hover {
     .posterWrapper {

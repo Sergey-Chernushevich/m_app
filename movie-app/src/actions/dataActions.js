@@ -3,7 +3,7 @@ import { GET_MOVIES, GET_MOVIE } from "./actionTypes";
 export function getMovies() {
   return async (dispatch) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=ef49482d&s="man"`
+      `http://www.omdbapi.com/?apikey=ef49482d&s="man"&plot=full`
     );
     const json = await response.json();
     dispatch({ type: GET_MOVIES, payload: json.Search });

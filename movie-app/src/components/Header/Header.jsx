@@ -6,7 +6,9 @@ function Header(props) {
   return (
     <header className={styles.headerWrapper}>
       <div className={styles.logo}>
-        <Link to={"/"}>Movie APP</Link>
+        <Link to={"/"} className={styles.logo}>
+          Movie APP
+        </Link>
       </div>
     </header>
   );

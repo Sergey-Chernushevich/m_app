@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
+import SearchForm from "../SearchForm";
 
 function Header(props) {
   return (
@@ -10,6 +11,7 @@ function Header(props) {
           Movie APP
         </Link>
       </div>
+      <SearchForm />
     </header>
   );
 }

@@ -13,7 +13,7 @@ export function getMovies() {
 export function getMovie(id) {
   return async (dispatch) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=ef49482d&i=${id}`
+      `http://www.omdbapi.com/?apikey=ef49482d&i=${id}&plot=full`
     );
     const json = await response.json();
     dispatch({ type: GET_MOVIE, payload: json });

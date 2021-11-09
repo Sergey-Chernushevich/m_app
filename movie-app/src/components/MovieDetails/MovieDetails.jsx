@@ -22,34 +22,69 @@ function MovieDetails(props) {
   return (
     <React.Fragment>
       <div className={styles.movieDetailsWrapper}>
-        <div className={styles.posterWrapper}>
+        <div className={styles.poster}>
           <img src={movie.Poster} alt="poster" />
         </div>
         <div className={styles.movieDetails}>
           <h2 className={styles.title}>{movie.Title}</h2>
           <ul>
-            <li>{movie.Year}</li>
-            <li>{movie.Released}</li>
-            <li>{movie.Runtime}</li>
-            <li>{movie.Genre}</li>
-            <li>{movie.Director}</li>
-            <li>{movie.Writer}</li>
-            <li>{movie.Actors}</li>
-            <li>{movie.Plot}</li>
-            <li>{movie.Country}</li>
-            <li>{movie.Awards}</li>
-            <li>{movie.Metascore}</li>
-            <li>{movie.imdbRating}</li>
+            <li>
+              <span>Year: </span> {movie.Year}
+            </li>
+            <li>
+              <span>Runtime: </span>
+              {movie.Runtime}
+            </li>
+            <li>
+              <span>Released: </span>
+              {movie.Released}
+            </li>
+            <li>
+              <span>Genre: </span>
+              {movie.Genre}
+            </li>
+            <li>
+              <span>Director: </span>
+              {movie.Director}
+            </li>
+            <li>
+              <span>Writer: </span>
+              {movie.Writer}
+            </li>
+            <li>
+              <span>Actors: </span>
+              {movie.Actors}
+            </li>
+            <li>
+              <span>Plot: </span>
+              {movie.Plot}
+            </li>
+            <li>
+              <span>Country: </span>
+              {movie.Country}
+            </li>
+            <li>
+              <span>Awards: </span>
+              {movie.Awards}
+            </li>
+            <li className={movie.Metascore > 50 ? styles.metascoreGreen : ""}>
+              <span>Metascore rating: </span> {movie.Metascore}
+            </li>
+            <li>
+              <span>OMDB rating: </span> {movie.imdbRating}
+            </li>
           </ul>
-          <a
-            href={"https://www.imdb.com/title/" + movie.imdbID}
-            target="_blank"
-            rel="noopered noreferrer"
-            className={styles.about}
-          >
-            About
-          </a>
-          <Link to="/">Back to search</Link>
+          <div className={styles.buttons}>
+            <a
+              href={"https://www.imdb.com/title/" + movie.imdbID}
+              target="_blank"
+              rel="noopered noreferrer"
+              className={styles.about}
+            >
+              About
+            </a>
+            <Link to="/">Back to search</Link>
+          </div>
         </div>
       </div>
     </React.Fragment>

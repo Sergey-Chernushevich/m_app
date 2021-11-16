@@ -1,16 +1,18 @@
+@import "../../assets/utilities/colorVar.module";
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1900px) {
   .movieCard {
-    width: 25%;
+    width: 18%;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .movieCard {
-    width: 33.333%;
+    width: 50%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -24,11 +26,9 @@
   }
 }
 .movieCard {
-  // height: auto;
   cursor: pointer;
   position: relative;
-  color: #fff;
-
+  color: $text_color;
   padding: 10px;
 
   &:hover {
@@ -47,7 +47,7 @@
   height: 100%;
   overflow: hidden;
   backface-visibility: hidden;
-  transition: transform 0.5s ease;
+  transition: transform 0.25s ease;
   border-radius: 10px;
 }
 
@@ -77,12 +77,12 @@
     padding: 90px 20px;
     text-align: center;
     border-radius: 10px;
+    color: $text_color;
+    font-size: 30px;
 
-    p {
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
+    div {
+      border-bottom: 1px solid $text_color;
       padding: 20px 0;
-      margin: 0 25px;
     }
   }
 

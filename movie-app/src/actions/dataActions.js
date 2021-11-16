@@ -1,9 +1,9 @@
 import { GET_MOVIES, GET_MOVIE } from "./actionTypes";
 
-export function getMovies() {
+export function getMovies(currentPage = 1) {
   return async (dispatch) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=ef49482d&s="man"&plot=full`
+      `http://www.omdbapi.com/?apikey=ef49482d&s="man"&plot=full&page=${currentPage}`
     );
     const json = await response.json();
     dispatch({ type: GET_MOVIES, payload: json });

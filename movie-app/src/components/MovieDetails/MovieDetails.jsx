@@ -6,6 +6,8 @@ import { withRouter } from "react-router-dom";
 import styles from "./MovieDetails.module.scss";
 import searchActions from "../../actions/searchActions";
 import { Link } from "react-router-dom";
+import posterPlaceHolder from "../../assets/img/no_poster.jpg";
+import Button from "../Button";
 
 function MovieDetails(props) {
   const { setLoading, movie } = props;
@@ -18,12 +20,15 @@ function MovieDetails(props) {
     dispatch(getMovie(movieId));
     setLoading();
   }, []);
-
+  let poster;
+  movie.Poster === "N/A"
+    ? (poster = posterPlaceHolder)
+    : (poster = movie.Poster);
   return (
     <React.Fragment>
       <div className={styles.movieDetailsWrapper}>
         <div className={styles.poster}>
-          <img src={movie.Poster} alt="poster" />
+          <img src={poster} alt="poster" />
         </div>
         <div className={styles.movieDetails}>
           <h2 className={styles.title}>{movie.Title}</h2>
@@ -71,19 +76,25 @@ function MovieDetails(props) {
               <span>Metascore rating: </span> {movie.Metascore}
             </li>
             <li>
-              <span>OMDB rating: </span> {movie.imdbRating}
+              <span>IMDB rating: </span> {movie.imdbRating}
             </li>
           </ul>
           <div className={styles.buttons}>
-            <a
-              href={"https://www.imdb.com/title/" + movie.imdbID}
-              target="_blank"
-              rel="noopered noreferrer"
-              className={styles.about}
-            >
-              About
-            </a>
-            <Link to="/">Back to search</Link>
+            <div>
+              <a
+                href={"https://www.imdb.com/title/" + movie.imdbID}
+                target="_blank"
+                rel="noopered noreferrer"
+                className={styles.about}
+              >
+                <Button title="About" />
+              </a>
+            </div>
+            <div>
+              <Link to="/">
+                <Button title="Back to search" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -7,4 +7,35 @@
   justify-content: center;
   padding: 10px;
   align-content: flex-start;
+
+  .pages {
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 0;
+    .page {
+      border: 1px solid #fff;
+      border-radius: 100%;
+      padding: 5px 10px;
+      margin: 0 10px;
+      &:hover {
+        background-color: rgb(0, 42, 228);
+      }
+    }
+
+    .currentPage {
+      border: 2px solid #fff;
+      background-color: rgb(0, 255, 115);
+      border-radius: 100%;
+    }
+  }
+}
+.pages1 {
+  color: #fff;
+  border: 1px solid #fff;
+  .MuiPagination-root .MuiPagination-text .MuiPagination-ul {
+    color: #fff;
+  }
+  .styleOverrides {
+    color: #ffffff;
+  }
 }

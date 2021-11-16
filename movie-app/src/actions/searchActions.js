@@ -4,6 +4,7 @@ import {
   SET_NEW_SEARCH_TEXT,
   FIND_MOVIE,
   LOADING,
+  SET_CURRENT_PAGE,
 } from "./actionTypes";
 
 import { APIKey } from "../APIKey";
@@ -18,10 +19,10 @@ const setNewSearchText = (searchText) => ({
   payload: searchText,
 });
 
-const findMovie = (searchText) => {
+const findMovie = (searchText, currentPage = 1) => {
   return async (dispatch) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}`
+      `http://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}&page=${currentPage}`
     );
     const json = await response.json();
     dispatch({ type: FIND_MOVIE, payload: json });
@@ -33,9 +34,17 @@ const setLoading = () => {
   };
 };
 
+const setCurrentPage = (page) => {
+  return {
+    type: SET_CURRENT_PAGE,
+    payload: page,
+  };
+};
+
 export default {
   searchMovie,
   setNewSearchText,
   findMovie,
   setLoading,
+  setCurrentPage,
 };

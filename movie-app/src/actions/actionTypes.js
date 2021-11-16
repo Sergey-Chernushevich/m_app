@@ -4,3 +4,4 @@ export const GET_MOVIES = "GET_MOVIES";
 export const FIND_MOVIE = "FIND_MOVIE";
 export const GET_MOVIE = "GET_MOVIE";
 export const LOADING = "LOADING";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";

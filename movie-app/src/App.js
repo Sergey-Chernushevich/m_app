@@ -5,7 +5,7 @@ import Header from "./components/Header";
 // import SearchForm from "./components/SearchForm";
 import store from "./store/store";
 import Main from "./components/Main/Main";
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 import { HashRouter as Router, Route } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails";
 

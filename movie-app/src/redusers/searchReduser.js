@@ -5,6 +5,7 @@ import {
   GET_MOVIE,
   FIND_MOVIE,
   LOADING,
+  SET_CURRENT_PAGE,
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -12,6 +13,8 @@ const initialState = {
   movies: [],
   loading: false,
   movie: [],
+  currentPage: 1,
+  totalCount: 0,
 };
 
 export const searchReduser = (state = initialState, action) => {
@@ -29,12 +32,14 @@ export const searchReduser = (state = initialState, action) => {
         ...state,
         movies: action.payload,
         loading: false,
+        totalCount: action.payload.totalResults,
       };
     case FIND_MOVIE:
       return {
         ...state,
         movies: action.payload,
         loading: false,
+        totalCount: action.payload.totalResults,
       };
     case GET_MOVIE:
       return {
@@ -46,6 +51,11 @@ export const searchReduser = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
+      };
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
       };
     default:
       return state;

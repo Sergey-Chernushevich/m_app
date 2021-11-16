@@ -1,0 +1,16 @@
+@import "../../assets/utilities/colorVar.module";
+.btn {
+  border: 1px solid $color_4;
+  background: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  color: $text_color;
+  font-size: 15px;
+  transition-duration: 0.25s;
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 0.25s;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./MovieCard.module.scss";
 import posterPlaceHolder from "../../assets/img/no_poster.jpg";
 import { Link } from "react-router-dom";
+import Button from "../Button";
 
 function MovieCard(props) {
   const { movie } = props;
@@ -11,17 +12,18 @@ function MovieCard(props) {
     : (poster = movie.Poster);
   return (
     <div className={styles.movieCard}>
-      <div className={styles.posterWrapper}>
-        <img src={poster} alt="" />
-      </div>
-      <div className={styles.movieDetailsWrapper}>
-        <div className={styles.movieDetails}>
-          <h3>{movie.Title}</h3>
-          <p>{movie.Year}</p>
-          <Link to={"/movie/" + movie.imdbID}>Dedails</Link>
+      <Link to={"/movie/" + movie.imdbID}>
+        <div className={styles.posterWrapper}>
+          <img src={poster} alt="" />
         </div>
-        <img src={poster} alt="" />
-      </div>
+        <div className={styles.movieDetailsWrapper}>
+          <div className={styles.movieDetails}>
+            <div className={styles.movieTitle}>{movie.Title}</div>
+            <div className={styles.movieYear}>{movie.Year}</div>
+          </div>
+          <img src={poster} alt="" />
+        </div>
+      </Link>
     </div>
   );
 }

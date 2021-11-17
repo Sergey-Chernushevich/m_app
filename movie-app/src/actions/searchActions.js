@@ -19,7 +19,10 @@ const setNewSearchText = (searchText) => ({
   payload: searchText,
 });
 
-const findMovie = (searchText, currentPage = 1) => {
+const findMovie = (searchText, currentPage) => {
+  if (searchText === "") {
+    searchText = "man";
+  }
   return async (dispatch) => {
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}&page=${currentPage}`

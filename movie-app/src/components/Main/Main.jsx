@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Main.module.css";
+import styles from "./Main.module.scss";
 import { connect } from "react-redux";
 import Spinner from "../Spinner";
 import MoviesContainer from "../MoviesContainer";
@@ -7,7 +7,7 @@ function Main(props) {
   const { loading } = props;
   return (
     <div className={styles.main}>
-      {loading ? <Spinner /> : <MoviesContainer />}
+      {loading ? <Spinner className={styles.spinner} /> : <MoviesContainer />}
     </div>
   );
 }

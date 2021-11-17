@@ -10,13 +10,14 @@ function SearchForm(props) {
     props;
   useEffect(() => {
     findMovie(searchText, currentPage);
+    setLoading();
   }, [currentPage, searchText]);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getMovies(currentPage));
-    setLoading();
-  }, [currentPage]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getMovies(currentPage));
+  //   setLoading();
+  // }, [currentPage]);
 
   const handleSearchTextChange = (e) => {
     setNewSearchText(e.target.value);

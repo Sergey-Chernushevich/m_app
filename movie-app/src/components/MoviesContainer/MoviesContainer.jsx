@@ -7,7 +7,6 @@ import searchActions from "../../actions/searchActions";
 import Pagination from "@mui/material/Pagination";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Paper } from "@mui/material";
-import { blue } from "@mui/material/colors";
 
 function MoviesContainer(props) {
   const { movies, response, currentPage, totalCount, setCurrentPage } = props;
@@ -22,7 +21,6 @@ function MoviesContainer(props) {
 
   const handleSetCurrentPage = (page) => {
     setCurrentPage(page);
-    console.log(page);
   };
   const theme = createTheme({
     palette: {

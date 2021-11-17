@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Spinner.module.scss";
-import spinner from "../../assets/loader/spiner.gif";
+import spinner from "../../assets/loader/spinner.svg";
 function Spinner() {
   return (
     <div className={styles.spinnerWrapper}>

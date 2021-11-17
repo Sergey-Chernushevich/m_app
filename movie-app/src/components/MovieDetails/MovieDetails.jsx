@@ -72,29 +72,42 @@ function MovieDetails(props) {
               <span>Awards: </span>
               {movie.Awards}
             </li>
-            <li className={movie.Metascore > 50 ? styles.metascoreGreen : ""}>
+            <li
+              className={
+                movie.Metascore >= 80
+                  ? styles.scoreGreen
+                  : movie.Metascore >= 40
+                  ? styles.scoreYellow
+                  : styles.scoreRed
+              }
+            >
               <span>Metascore rating: </span> {movie.Metascore}
             </li>
-            <li>
+            <li
+              className={
+                movie.imdbRating >= 8
+                  ? styles.scoreGreen
+                  : movie.imdbRating >= 4
+                  ? styles.scoreYellow
+                  : styles.scoreRed
+              }
+            >
               <span>IMDB rating: </span> {movie.imdbRating}
             </li>
           </ul>
           <div className={styles.buttons}>
-            <div>
-              <a
-                href={"https://www.imdb.com/title/" + movie.imdbID}
-                target="_blank"
-                rel="noopered noreferrer"
-                className={styles.about}
-              >
-                <Button title="About" />
-              </a>
-            </div>
-            <div>
-              <Link to="/">
-                <Button title="Back to search" />
-              </Link>
-            </div>
+            <a
+              href={"https://www.imdb.com/title/" + movie.imdbID}
+              target="_blank"
+              rel="noopered noreferrer"
+              className={`${styles.btn}`}
+            >
+              About
+            </a>
+
+            <Link to="/">
+              <button className={`${styles.btn}`}>Back to search</button>
+            </Link>
           </div>
         </div>
       </div>

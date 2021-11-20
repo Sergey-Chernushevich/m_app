@@ -7,7 +7,6 @@ import styles from "./MovieDetails.module.scss";
 import searchActions from "../../actions/searchActions";
 import { Link } from "react-router-dom";
 import posterPlaceHolder from "../../assets/img/no_poster.jpg";
-import Button from "../Button";
 
 function MovieDetails(props) {
   const { setLoading, movie } = props;
@@ -121,7 +120,6 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = (state) => ({
-  //   loading: state.movie.loading,
   movie: state.movies.movie,
 });
 

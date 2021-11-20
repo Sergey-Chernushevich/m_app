@@ -5,11 +5,17 @@ import MovieCard from "../MovieCard";
 import Error from "../Error";
 import searchActions from "../../actions/searchActions";
 import Pagination from "@mui/material/Pagination";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Paper } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 function MoviesContainer(props) {
-  const { movies, response, currentPage, totalCount, setCurrentPage } = props;
+  const {
+    movies,
+    response,
+    currentPage,
+    totalCount,
+    setCurrentPage,
+    setLoading,
+  } = props;
 
   let content = "";
   content =
@@ -21,29 +27,57 @@ function MoviesContainer(props) {
 
   const handleSetCurrentPage = (page) => {
     setCurrentPage(page);
+    setLoading();
   };
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#000",
+
+  const useStyles = makeStyles({
+    root: {
+      background: "transparent",
+      border: 0,
+      color: "white",
+      margin: "0 auto",
+      width: "100$",
+      justify: "center",
+      justifyContent: "center",
+      alignItems: "center",
+      display: "flex",
+    },
+    ul: {
+      "& .MuiPaginationItem-root": {
+        color: "#fff",
+        fontSize: "18px",
+        alignItems: "center",
+        justify: "center",
+        margin: "0",
+        width: "100%",
+        "&:hover": {
+          background: "rgba(255,255,255, 0.2)",
+        },
+        "@media (max-width: 405px)": {
+          fontSize: "15px",
+        },
       },
     },
   });
+  const classes = useStyles();
   return (
-    <div className={styles.moviesContainer}>
-      {content}
-      <ThemeProvider theme={theme}>
-        <Paper>
+    <div className={styles.moviesContainerWrapper}>
+      <div className={styles.moviesContainer}>
+        {content}
+        <div className={styles.pages}>
           <Pagination
+            color="secondary"
+            className={`${classes.root} ${classes.ul}`}
             count={Math.ceil(totalCount / 10)}
             showFirstButton
             showLastButton
             page={currentPage}
-            sx={{ width: 1 }}
-            onChange={(_, page) => handleSetCurrentPage(page)}
+            onChange={(_, page) => {
+              if (page !== currentPage) handleSetCurrentPage(page);
+            }}
           />
-        </Paper>
-      </ThemeProvider>
+        </div>
+      </div>
     </div>
   );
 }

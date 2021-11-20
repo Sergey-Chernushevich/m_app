@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MovieCard.module.scss";
 import posterPlaceHolder from "../../assets/img/no_poster.jpg";
 import { Link } from "react-router-dom";
-import Button from "../Button";
 
 function MovieCard(props) {
   const { movie } = props;

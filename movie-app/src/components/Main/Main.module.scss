@@ -1,10 +1,7 @@
+@import "../../assets/utilities/colorVar.module";
 .main {
   min-height: 100px;
   flex-grow: 2;
   position: relative;
-}
-.spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  background-color: $color_0;
 }

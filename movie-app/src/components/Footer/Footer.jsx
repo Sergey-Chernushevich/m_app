@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import indbIcon from "../../assets/icons/imdb_logo_icon.svg";
+import react_logo from "../../assets/icons/logo192.png";
 
 function Footer() {
   return (
@@ -15,14 +15,15 @@ function Footer() {
           >
             Sergey Chernushevich
           </a>
-          , <b>!!!!ICON</b> Using React JS & Redux JS integrated with external
-          module data API{" "}
+          ,
+          <img src={react_logo} alt="" />
+          Using React JS & Redux JS integrated with external module data API{" "}
           <a
             href="http://www.omdbapi.com/"
             rel="noreferrer noopener"
             target="_blank"
           >
-            <img src={indbIcon} alt="" />
+            OMDB
           </a>
         </p>
       </div>

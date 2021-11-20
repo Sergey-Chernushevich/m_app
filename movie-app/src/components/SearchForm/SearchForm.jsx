@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import searchActions from "../../actions/searchActions";
-import { connect, useDispatch } from "react-redux";
-import { getMovies } from "../../actions/dataActions";
+import { connect } from "react-redux";
 import styles from "./SearchForm.module.scss";
 
 function SearchForm(props) {
@@ -12,12 +11,6 @@ function SearchForm(props) {
     findMovie(searchText, currentPage);
     setLoading();
   }, [currentPage, searchText]);
-
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getMovies(currentPage));
-  //   setLoading();
-  // }, [currentPage]);
 
   const handleSearchTextChange = (e) => {
     setNewSearchText(e.target.value);
@@ -31,13 +24,12 @@ function SearchForm(props) {
     <div className={styles.searchForm}>
       <form action="submit" onSubmit={handleSearchMovie}>
         <input
-          placeholder="Movie"
+          placeholder="Search for a movie"
           className={styles.searchInput}
           type="text"
           onChange={handleSearchTextChange}
           value={searchText}
         />
-        <button type="submit" className={styles.searchBtn}></button>
       </form>
     </div>
   );

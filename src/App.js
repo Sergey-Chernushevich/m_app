@@ -16,8 +16,6 @@ function App() {
         <div className={styles.appWrapper}>
           <div className={styles.appContent}>
             <Header />
-            {/* <SearchForm /> */}
-            {/* <Main className={styles.main} /> */}
             <Route exact path="/" component={Main} />
             <Route path="/movie/:id" exact component={MovieDetails} />
             <Footer />

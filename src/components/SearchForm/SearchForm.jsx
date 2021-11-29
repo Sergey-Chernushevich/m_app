@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
-import searchActions from "../../actions/searchActions";
 import { connect } from "react-redux";
+import searchActions from "../../actions/searchActions";
 import styles from "./SearchForm.module.scss";
 
 function SearchForm(props) {

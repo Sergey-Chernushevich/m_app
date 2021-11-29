@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
-import { getMovie } from "../../actions/dataActions";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./MovieDetails.module.scss";
 import searchActions from "../../actions/searchActions";
-import { Link } from "react-router-dom";
+import { getMovie } from "../../actions/dataActions";
 import posterPlaceHolder from "../../assets/img/no_poster.jpg";
 
 function MovieDetails(props) {

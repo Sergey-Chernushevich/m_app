@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.scss";
 import posterPlaceHolder from "../../assets/img/no_poster.jpg";
-import { Link } from "react-router-dom";
 
 function MovieCard(props) {
   const { movie } = props;

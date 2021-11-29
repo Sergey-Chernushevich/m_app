@@ -1,8 +1,9 @@
 import React from "react";
-import styles from "./Main.module.scss";
 import { connect } from "react-redux";
+import styles from "./Main.module.scss";
 import Spinner from "../Spinner";
 import MoviesContainer from "../MoviesContainer";
+
 function Main(props) {
   const { loading } = props;
   return (

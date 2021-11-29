@@ -2,7 +2,6 @@
 import { Provider } from "react-redux";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header";
-// import SearchForm from "./components/SearchForm";
 import store from "./store/store";
 import Main from "./components/Main/Main";
 import styles from "./App.module.scss";

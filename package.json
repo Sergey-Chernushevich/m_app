@@ -2,7 +2,7 @@
   "name": "movie-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sergey-chernushevich.github.io/m_app",
+  "homepage": "https://Sergey-Chernushevich.github.io/m_app",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
@@ -26,7 +26,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "deploy": "npm run build&&gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

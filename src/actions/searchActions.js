@@ -25,7 +25,7 @@ const findMovie = (searchText, currentPage) => {
   }
   return async (dispatch) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}&page=${currentPage}`
+      `https://www.omdbapi.com/?apikey=${APIKey}&s=${searchText}&page=${currentPage}`
     );
     const json = await response.json();
     dispatch({ type: FIND_MOVIE, payload: json });
